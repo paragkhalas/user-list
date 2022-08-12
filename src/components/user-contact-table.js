@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { useTable, useSortBy, useFilters, usePagination } from 'react-table';
-import { Table, Row, Col, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
 import { Filter, DefaultColumnFilter } from './filter';
+import Pagination from './pagination';
 
 import sortasc from '../assets/sort_asc.png';
 import sortdesc from '../assets/sort_desc.png';
@@ -50,7 +51,7 @@ const UserContactable = ({ columns, data, loading = false }) => {
 
   return (
     <>
-      <Table {...getTableProps()} bordered responsive striped>
+      <Table {...getTableProps()} bordered responsive striped data-testid="user-list">
         <thead>
           {headerGroups.map((headerGroup, i) => {
             return (
@@ -123,24 +124,14 @@ const UserContactable = ({ columns, data, loading = false }) => {
         )}
       </Table>
       {!loading && (
-        <Row style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
-          <Col md={5}>
-            <Button color="primary" onClick={previousPage} disabled={!canPreviousPage}>
-              {'<'}
-            </Button>
-          </Col>
-          <Col md={2} style={{ marginTop: 7 }}>
-            Page{' '}
-            <strong>
-              {pageIndex + 1} of {pageOptions.length}
-            </strong>
-          </Col>
-          <Col md={5}>
-            <Button color="primary" onClick={nextPage} disabled={!canNextPage}>
-              {'>'}
-            </Button>
-          </Col>
-        </Row>
+        <Pagination
+          nextPage={nextPage}
+          previousPage={previousPage}
+          pageIndex={pageIndex}
+          pageOptions={pageOptions}
+          canNextPage={canNextPage}
+          canPreviousPage={canPreviousPage}
+        />
       )}
     </>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 import React, { useEffect, useState, useMemo, Fragment } from 'react';
 import { Container } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
@@ -62,7 +61,7 @@ const App = () => {
         disableFilters: true,
       },
       {
-        Header: 'Delete',
+        Header: 'Actions',
         id: 'delete',
         accessor: () => 'delete',
         Cell: (cellProps) => (
@@ -116,7 +115,7 @@ const App = () => {
   return (
     <>
       <Container style={{ marginTop: 16 }} className="themed-container" fluid>
-        <h3 className='page-title'>{process.env.REACT_APP_TITLE}</h3>
+        <h3 className="page-title">{process.env.REACT_APP_TITLE}</h3>
         <UserContactable columns={columns} data={users} loading={loading} />
       </Container>
       <ToastContainer />
