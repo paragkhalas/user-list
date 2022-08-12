@@ -1,9 +1,17 @@
 import axios from 'axios';
+
 const config = {
-  api: 'https://randomuser.me/api',
+  api: process.env.REACT_APP_API_BASE,
   options: {
     headers: { 'content-type': 'application/json' },
   },
+};
+
+const handleResponse = (response) => {
+  if (response.status === 200) {
+    return response.data;
+  }
+  throw Error(response.data ? response.data : 'error');
 };
 
 const httpGet = (endpoint) => {
@@ -13,18 +21,8 @@ const httpGet = (endpoint) => {
     .then((response) => handleResponse(response))
     .then((response) => response)
     .catch((error) => {
-      console.error(error);
       throw Error(error);
     });
 };
 
-const handleResponse = (response) => {
-  if (response.status === 200) {
-    return response.data;
-  } else {
-    throw Error(response.data | 'error');
-  }
-};
-
-// eslint-disable-next-line import/no-anonymous-default-export
 export default { httpGet };

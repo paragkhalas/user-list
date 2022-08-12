@@ -12,29 +12,32 @@
   padding: 8px 12px;
   font-size: 14px;
 }
- 
+
 .table > thead > tr.theader {
-  background-color: #f5f5f5;
+  background-color: floralwhite;
   text-transform: uppercase;
   font-weight: 600;
 }
- 
+
 .table > thead > tr > th {
-  color: #333;
   font-size: 13px;
   line-height: 16px;
   white-space: nowrap;
 }
- 
+
 .table > thead > tr > th.tfilter {
   padding: 2px 5px;
   font-weight: 400;
 }
- 
+
 .table > thead > tr > th.tfilter > div > label.divFilter {
   font-size: 10px;
 }
- 
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+  --bs-table-accent-bg: floralwhite !important;
+}
+
 .bg-white {
   --bs-table-accent-bg: #ffffff !important;
 }
@@ -45,5 +48,10 @@
 }
 
 .delete-icon-container img {
-    height: 24px;
+  height: 24px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 16px;
 }
