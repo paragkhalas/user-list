@@ -22,14 +22,14 @@ In the project directory, you can run:
 6. .prettierignore
 7. .ediotrignore
 
-### To create docker build
+### To create docker build, run
 
-run 'docker build -t <DOCKER_USERNAME>/<APPLICATION_NAME> -f Dockerfile.dev .'
+docker build -t <DOCKER_USERNAME>/<APPLICATION_NAME> -f Dockerfile.dev .
 
-### To check docker images
+### To check docker images, run
 
-run 'docker images'
+docker images
 
-### To Run docker build
+### To Run docker build, run
 
 docker run -it -p 3000:3000 <IMAGE_TAG>
