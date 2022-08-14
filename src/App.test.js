@@ -3,11 +3,10 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 describe('APP', () => {
-
   beforeEach(() => {
     process.env = Object.assign(process.env, {
       REACT_APP_TITLE: 'User List Application',
-      REACT_APP_API_BASE: 'https://randomuser.me/api?results=1'
+      REACT_APP_API_BASE: 'https://randomuser.me/api?results=1',
     });
   });
 
@@ -32,5 +31,4 @@ describe('APP', () => {
     expect(pictureHeader).toBeInTheDocument();
     expect(actionHeader).toBeInTheDocument();
   });
-
-})
+});

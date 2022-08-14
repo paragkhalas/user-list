@@ -91,7 +91,7 @@ const UserContactable = ({ columns, data, loading = false }) => {
             </tr>
           </tbody>
         )}
-        {loading && page.length === 0 ? (
+        {!loading && page.length === 0 ? (
           <tbody>
             <tr>
               <td colSpan="10000" className="text-center">

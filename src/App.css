@@ -49,3 +49,30 @@
   text-align: center;
   margin-bottom: 16px;
 }
+
+.accordion {
+  margin-bottom: 16px;
+}
+
+.accordion-header .accordion-button {
+  background-color: floralwhite !important;
+  color: #212529 !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: default !important;
+}
+
+.accordion-header .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item {
+  border-radius: 0 !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: none !important;
+  cursor: default;
+}
