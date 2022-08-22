@@ -1,5 +1,6 @@
 # User List Application using REACT
 
+Developed using React.js
 This project displays user list in table structure with pagination, sorting and filter option. Also applied canvas chart to display demogrraphic information regarding most 5 favorite country in which users belongs to. Displays other countries as well in the chart.
 
 ## Available Scripts
